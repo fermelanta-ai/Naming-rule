@@ -1,0 +1,1017 @@
+<title>ファーメランタ命名規程</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+:root{
+  --paper:#F4F6F8;
+  --surface:#FFFFFF;
+  --surface-2:#EDF0F3;
+  --ink:#15181D;
+  --ink-2:#525A66;
+  --ink-3:#7C8593;
+  --rule:#D8DDE3;
+  --rule-strong:#B4BCC6;
+  --accent:#0F625C;
+  --accent-ink:#0A4844;
+  --accent-soft:#E0EDEB;
+  --bad:#A33018;
+  --bad-soft:#F7E7E2;
+  --good:#2A6B3C;
+  --good-soft:#E3EFE6;
+  --warn:#8A6100;
+  --warn-soft:#F6EEDC;
+  --shadow:0 1px 2px rgba(21,24,29,.05), 0 8px 24px -16px rgba(21,24,29,.28);
+  --mono:"JetBrains Mono","Noto Sans JP",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:"Noto Sans JP",system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  --serif:"Shippori Mincho B1","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#101317;
+    --surface:#181C22;
+    --surface-2:#20252C;
+    --ink:#E6EAEF;
+    --ink-2:#A2ABB7;
+    --ink-3:#79828F;
+    --rule:#2C323A;
+    --rule-strong:#3D4550;
+    --accent:#4FB5A9;
+    --accent-ink:#7FCFC4;
+    --accent-soft:#14312E;
+    --bad:#E58B72;
+    --bad-soft:#33201B;
+    --good:#84C495;
+    --good-soft:#1B2E21;
+    --warn:#D6A94A;
+    --warn-soft:#2E2716;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101317;
+  --surface:#181C22;
+  --surface-2:#20252C;
+  --ink:#E6EAEF;
+  --ink-2:#A2ABB7;
+  --ink-3:#79828F;
+  --rule:#2C323A;
+  --rule-strong:#3D4550;
+  --accent:#4FB5A9;
+  --accent-ink:#7FCFC4;
+  --accent-soft:#14312E;
+  --bad:#E58B72;
+  --bad-soft:#33201B;
+  --good:#84C495;
+  --good-soft:#1B2E21;
+  --warn:#D6A94A;
+  --warn-soft:#2E2716;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
+}
+::selection{background:var(--accent-soft);color:var(--accent-ink)}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+/* ---------- shell ---------- */
+.shell{max-width:1180px;margin:0 auto;padding:0 24px 96px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:0 56px;align-items:start}
+@media (max-width:940px){.shell{grid-template-columns:minmax(0,1fr);gap:0;padding:0 20px 72px}}
+
+/* ---------- masthead : 規程票 ---------- */
+.masthead{grid-column:1/-1;border-bottom:2px solid var(--ink);padding:44px 0 0;margin-bottom:0}
+.mast-eyebrow{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:baseline;font-size:11.5px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;font-weight:500}
+.mast-eyebrow b{color:var(--accent);font-weight:700}
+.mast-title{font-family:var(--serif);font-weight:700;font-size:clamp(34px,5.4vw,54px);line-height:1.18;letter-spacing:.01em;margin:16px 0 8px;text-wrap:balance}
+.mast-sub{font-size:15.5px;color:var(--ink-2);max-width:60ch;margin:0 0 26px}
+.mast-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border-top:1px solid var(--rule);margin-bottom:-1px}
+.mast-cell{padding:14px 18px 16px 0;border-bottom:1px solid var(--rule)}
+.mast-cell dt{font-size:11px;letter-spacing:.12em;color:var(--ink-3);text-transform:uppercase;margin:0 0 4px;font-weight:500}
+.mast-cell dd{margin:0;font-size:14px;font-weight:500;line-height:1.6}
+
+/* ---------- sidebar nav ---------- */
+.rail{position:sticky;top:24px;padding-top:44px;font-size:13px}
+@media (max-width:940px){.rail{display:none}}
+.rail-h{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:600;padding-bottom:10px;border-bottom:1px solid var(--rule);margin-bottom:4px}
+.rail a{display:grid;grid-template-columns:26px 1fr;gap:8px;padding:6px 0;color:var(--ink-2);text-decoration:none;border-bottom:1px solid transparent;line-height:1.4}
+.rail a:hover{color:var(--accent)}
+.rail a span:first-child{font-family:var(--mono);font-size:11px;color:var(--ink-3);padding-top:2px}
+.rail a:hover span:first-child{color:var(--accent)}
+
+/* ---------- sections ---------- */
+main{padding-top:44px;min-width:0}
+section{margin-bottom:64px;scroll-margin-top:20px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;border-bottom:1px solid var(--rule-strong);padding-bottom:10px;margin-bottom:26px}
+.sec-num{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--accent);line-height:1}
+h2{font-family:var(--serif);font-weight:700;font-size:26px;line-height:1.3;margin:0;letter-spacing:.01em;text-wrap:balance}
+h3{font-size:16px;font-weight:700;margin:32px 0 10px;line-height:1.5;letter-spacing:.01em}
+h3:first-child{margin-top:0}
+h4{font-size:13.5px;font-weight:700;margin:22px 0 8px;color:var(--ink-2)}
+p{margin:0 0 14px;max-width:68ch}
+.lede{font-size:16px;color:var(--ink-2);max-width:64ch;margin-bottom:24px}
+ul,ol{margin:0 0 16px;padding-left:1.3em;max-width:66ch}
+li{margin-bottom:5px}
+strong{font-weight:700}
+code{font-family:var(--mono);font-size:.9em;background:var(--surface-2);padding:.12em .38em;border-radius:3px;word-break:break-all}
+
+/* ---------- three-rule tiles ---------- */
+.rules3{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:8px}
+.rule3{background:var(--surface);padding:20px 20px 22px;display:flex;flex-direction:column;gap:8px}
+.rule3 .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--accent);font-weight:700}
+.rule3 .t{font-size:15px;font-weight:700;line-height:1.5}
+.rule3 .d{font-size:13px;color:var(--ink-2);line-height:1.7;margin:0}
+.rule3 .d code{font-size:11.5px}
+
+/* ---------- filename specimen ---------- */
+.spec{background:var(--surface);border:1px solid var(--rule);padding:22px 20px 18px;overflow-x:auto;margin-bottom:18px}
+.spec-row{display:flex;align-items:flex-end;gap:0;font-family:var(--mono);white-space:nowrap;min-width:min-content}
+.tok{display:flex;flex-direction:column;gap:9px;align-items:center;padding:0 2px}
+.tok .v{font-size:16px;font-weight:700;color:var(--ink);letter-spacing:.01em}
+.tok .l{font-size:10px;letter-spacing:.05em;color:var(--ink-3);font-family:var(--sans);border-top:1px solid var(--rule-strong);padding-top:7px;width:100%;text-align:center;white-space:nowrap}
+.tok.opt .v{color:var(--ink-3)}
+.tok.opt .l{color:var(--ink-3);border-top-style:dashed}
+.sep{font-size:16px;font-weight:700;color:var(--accent);padding:0 1px;align-self:flex-start;line-height:1.45}
+.spec-note{font-size:12px;color:var(--ink-3);margin:16px 0 0;padding-top:12px;border-top:1px solid var(--rule);max-width:none}
+
+/* ---------- checker ---------- */
+.checker{background:var(--surface);border:1px solid var(--rule-strong);box-shadow:var(--shadow);padding:22px 22px 20px;margin-bottom:20px}
+.checker h3{margin:0 0 4px;font-size:15px}
+.checker .hint{font-size:12.5px;color:var(--ink-2);margin:0 0 14px}
+.checker input{width:100%;font-family:var(--mono);font-size:14px;padding:11px 12px;border:1px solid var(--rule-strong);background:var(--paper);color:var(--ink);border-radius:3px;line-height:1.6}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
+.chip{font-family:var(--mono);font-size:11px;padding:4px 9px;border:1px solid var(--rule);background:var(--surface-2);color:var(--ink-2);border-radius:99px;cursor:pointer;line-height:1.5;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+#verdict{margin-top:16px;font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:8px}
+#verdict .badge{font-family:var(--mono);font-size:11px;padding:3px 9px;border-radius:99px;letter-spacing:.06em}
+.badge.ok{background:var(--good-soft);color:var(--good)}
+.badge.ng{background:var(--bad-soft);color:var(--bad)}
+#findings{list-style:none;padding:0;margin:12px 0 0;max-width:none;display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+#findings li{margin:0;background:var(--surface);padding:9px 12px;font-size:13px;display:grid;grid-template-columns:18px 1fr;gap:9px;line-height:1.65}
+#findings .m{font-family:var(--mono);font-weight:700;font-size:12px;padding-top:1px}
+#findings .ng .m{color:var(--bad)}
+#findings .ok .m{color:var(--good)}
+#findings .wa .m{color:var(--warn)}
+#findings b{font-family:var(--mono);font-weight:700;word-break:break-all}
+
+/* ---------- compare pairs ---------- */
+.pairs{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:18px}
+.pair{background:var(--surface);display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;padding:10px 13px;align-items:start}
+.pair .m{font-family:var(--mono);font-weight:700;font-size:13px;line-height:1.6}
+.pair.no .m{color:var(--bad)}
+.pair.yes .m{color:var(--good)}
+.pair .fn{font-family:var(--mono);font-size:12.5px;line-height:1.65;word-break:break-all}
+.pair.no .fn{color:var(--ink-2)}
+.pair .why{display:block;font-family:var(--sans);font-size:11.5px;color:var(--ink-3);margin-top:2px}
+
+/* ---------- tables ---------- */
+.tw{overflow-x:auto;margin-bottom:20px;border:1px solid var(--rule);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:460px}
+th,td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.65}
+thead th{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);font-weight:600;background:var(--surface-2);border-bottom:1px solid var(--rule-strong);white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td code,th code{background:transparent;padding:0}
+.mono{font-family:var(--mono);font-size:12.5px;word-break:break-all}
+.nowrap{white-space:nowrap}
+.c-bad{color:var(--bad);font-weight:700}
+.c-good{color:var(--good);font-weight:700}
+
+/* ---------- callout ---------- */
+.note{border-left:3px solid var(--accent);background:var(--accent-soft);padding:14px 16px;margin:0 0 20px;font-size:13.5px;line-height:1.75}
+.note p{margin:0;max-width:none}
+.note p+p{margin-top:8px}
+.note.alert{border-left-color:var(--bad);background:var(--bad-soft)}
+.note b{font-weight:700}
+
+/* ---------- dept band ---------- */
+.dept{border:1px solid var(--rule);background:var(--surface);margin-bottom:22px}
+.dept-h{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:baseline;padding:14px 18px;border-bottom:1px solid var(--rule);background:var(--surface-2)}
+.dept-h .nm{font-family:var(--serif);font-size:19px;font-weight:700}
+.dept-h .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--accent);border:1px solid var(--accent);padding:2px 7px;border-radius:99px}
+.dept-h .st{margin-left:auto;font-size:11.5px;color:var(--ink-3);letter-spacing:.04em}
+.dept-b{padding:18px}
+.dept-b > :last-child{margin-bottom:0}
+.dept-b .spec{border-color:var(--rule);margin-bottom:16px}
+
+/* ---------- timeline ---------- */
+.phases{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.phase{background:var(--surface);display:grid;grid-template-columns:76px 1fr;gap:16px;padding:15px 16px}
+@media (max-width:560px){.phase{grid-template-columns:1fr;gap:6px}}
+.phase .p{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.06em}
+.phase .p span{display:block;color:var(--ink-3);font-weight:400;margin-top:3px;letter-spacing:0}
+.phase .b h4{margin:0 0 5px;font-size:14px;color:var(--ink)}
+.phase .b p{margin:0;font-size:13px;color:var(--ink-2);max-width:60ch}
+.phase .b ul{margin:7px 0 0;font-size:12.5px;color:var(--ink-2)}
+
+/* ---------- checklist ---------- */
+.cl{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.cl label{background:var(--surface);display:grid;grid-template-columns:auto 1fr;gap:10px;padding:11px 14px;font-size:13px;line-height:1.65;cursor:pointer;align-items:start}
+.cl input{margin:5px 0 0;accent-color:var(--accent);width:14px;height:14px}
+.cl label:hover{background:var(--surface-2)}
+.cl code{font-size:11.5px}
+
+/* ---------- faq ---------- */
+details{border-bottom:1px solid var(--rule);background:var(--surface)}
+details:first-of-type{border-top:1px solid var(--rule)}
+summary{padding:12px 16px;cursor:pointer;font-size:14px;font-weight:500;list-style:none;display:grid;grid-template-columns:20px 1fr;gap:10px;line-height:1.6}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋";font-family:var(--mono);color:var(--accent);font-size:12px;padding-top:3px}
+details[open] summary::before{content:"−"}
+details[open] summary{font-weight:700}
+summary:hover{background:var(--surface-2)}
+.ans{padding:0 16px 16px 46px;font-size:13.5px;color:var(--ink-2);line-height:1.8}
+.ans p{margin:0 0 10px;max-width:62ch}
+.ans p:last-child{margin-bottom:0}
+.ans code{font-size:12px}
+
+/* ---------- footer ---------- */
+footer{grid-column:1/-1;border-top:2px solid var(--ink);margin-top:24px;padding-top:20px;font-size:12.5px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between}
+footer b{color:var(--ink-2);font-weight:500}
+
+@media print{
+  body{background:#fff;font-size:10.5pt;line-height:1.6}
+  .rail,.checker,.chips{display:none}
+  .shell{grid-template-columns:1fr;max-width:none;padding:0}
+  section{page-break-inside:avoid;margin-bottom:24px}
+  details{page-break-inside:avoid}
+  details .ans{display:block}
+  .spec,.tw,.pairs,.cl,.phases{box-shadow:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="shell">
+
+<header class="masthead">
+  <div class="mast-eyebrow">
+    <span>ファーメランタ株式会社</span><span>社内標準</span><b>FLT-STD-001</b><span>Ver. 1.0</span>
+  </div>
+  <h1 class="mast-title">ファイル命名規程</h1>
+  <p class="mast-sub">SharePoint 上のファイル名・フォルダ名を、探せる状態に保つための全社標準です。研究開発部・事業開発部・管理部の実データを調査したうえで策定しました。</p>
+  <dl class="mast-grid">
+    <div class="mast-cell"><dt>制定日</dt><dd>2026年9月8日</dd></div>
+    <div class="mast-cell"><dt>適用開始</dt><dd>2026年10月1日（新規ファイルから）</dd></div>
+    <div class="mast-cell"><dt>適用範囲</dt><dd>SharePoint / OneDrive / Teams 全ファイル</dd></div>
+    <div class="mast-cell"><dt>所管</dt><dd>管理部 情報管理</dd></div>
+    <div class="mast-cell"><dt>調査対象</dt><dd>3部門サイト・最大6階層</dd></div>
+  </dl>
+</header>
+
+<nav class="rail" aria-label="目次">
+  <div class="rail-h">目次</div>
+  <a href="#core"><span>01</span><span>3つの原則</span></a>
+  <a href="#grammar"><span>02</span><span>ファイル名の構文</span></a>
+  <a href="#check"><span>03</span><span>名前チェッカー</span></a>
+  <a href="#chars"><span>04</span><span>文字ルール</span></a>
+  <a href="#date"><span>05</span><span>日付ルール</span></a>
+  <a href="#ver"><span>06</span><span>版ルール</span></a>
+  <a href="#dept"><span>07</span><span>部門別ルール</span></a>
+  <a href="#exempt"><span>08</span><span>例外</span></a>
+  <a href="#folder"><span>09</span><span>フォルダ</span></a>
+  <a href="#where"><span>10</span><span>保存場所</span></a>
+  <a href="#plan"><span>11</span><span>移行計画</span></a>
+  <a href="#list"><span>12</span><span>チェックリスト</span></a>
+  <a href="#faq"><span>13</span><span>FAQ</span></a>
+</nav>
+
+<main>
+
+<section id="core">
+  <div class="sec-head"><div class="sec-num">01</div><h2>まず、この3つだけ</h2></div>
+  <p class="lede">細かい規定は下に続きますが、この3つを守るだけで、現在起きている問題のほとんどは起きなくなります。</p>
+  <div class="rules3">
+    <div class="rule3">
+      <div class="k">RULE 01</div>
+      <div class="t">先頭は8桁の日付</div>
+      <p class="d"><code>20260728</code>。6桁（<code>260728</code>）は使いません。年月と日が区別できず、桁落ちにも気づけません。</p>
+    </div>
+    <div class="rule3">
+      <div class="k">RULE 02</div>
+      <div class="t">区切りは半角アンダースコアだけ</div>
+      <p class="d">スペース・全角 <code>＿</code>・<code>（）</code>・<code>【】</code>・<code>★</code>・<code>@</code> は使いません。リンクと自動処理が壊れます。</p>
+    </div>
+    <div class="rule3">
+      <div class="k">RULE 03</div>
+      <div class="t">版は <code>_v01</code> か <code>_vF</code></div>
+      <p class="d"><code>最新</code> <code>修正済み</code> <code>コピー</code> <code>(1)</code> は禁止。社内編集は SharePoint の履歴で追えます。</p>
+    </div>
+  </div>
+</section>
+
+<section id="grammar">
+  <div class="sec-head"><div class="sec-num">02</div><h2>ファイル名の構文</h2></div>
+  <p class="lede">ファイル名は「日付 ＋ 2つのキー ＋ 補足」でできています。区切りの <code>_</code> がトークンの境目です。</p>
+
+  <div class="spec">
+    <div class="spec-row">
+      <div class="tok"><div class="v">YYYYMMDD</div><div class="l">基準日・8桁</div></div>
+      <div class="sep">_</div>
+      <div class="tok"><div class="v">第1キー</div><div class="l">部門が定義</div></div>
+      <div class="sep">_</div>
+      <div class="tok"><div class="v">第2キー</div><div class="l">部門が定義</div></div>
+      <div class="sep">_</div>
+      <div class="tok opt"><div class="v">補足</div><div class="l">任意・最大2</div></div>
+      <div class="sep">_</div>
+      <div class="tok opt"><div class="v">v01</div><div class="l">任意・社外版のみ</div></div>
+      <div class="tok"><div class="v">.xlsx</div><div class="l">拡張子は1つ</div></div>
+    </div>
+    <p class="spec-note">トークン数は日付を含めて 3〜6 個。7個以上になったら、フォルダ階層で表すべき情報がファイル名に流れ込んでいます。</p>
+  </div>
+
+  <h3>第1キー・第2キーが部門で違う理由</h3>
+  <p>全社で統一するのは、検索とツールを壊す要素（文字種・日付形式・版表記）だけに絞りました。意味の並び順まで一本化すると、業務が違う以上かならず形骸化します。</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th>部門</th><th>探すときの入口</th><th>第1キー</th><th>第2キー</th></tr></thead>
+      <tbody>
+        <tr><td class="nowrap">研究開発部</td><td>化合物・プロジェクト</td><td>PJコード</td><td>文書種別</td></tr>
+        <tr><td class="nowrap">事業開発部</td><td>誰と</td><td>文書種別</td><td>相手先</td></tr>
+        <tr><td class="nowrap">管理部</td><td>誰と・何の書類</td><td>文書種別</td><td>相手先・制度</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>「アスタキサンチンのLC-MSデータ」は探しますが、「LC-MSデータのアスタキサンチン」とは探しません。研究開発部だけ主題が先なのは、そのためです。</p>
+</section>
+
+<section id="check">
+  <div class="sec-head"><div class="sec-num">03</div><h2>名前チェッカー</h2></div>
+  <p class="lede">保存する前に貼り付けて確認できます。ブラウザ内だけで動き、どこにも送信されません。</p>
+  <div class="checker">
+    <h3>ファイル名を入力</h3>
+    <p class="hint">初期値は、実際に社内に存在するファイル名です。</p>
+    <input id="fn" type="text" spellcheck="false" autocomplete="off" aria-label="チェックするファイル名"
+           value="202511313 Astaxanthin MS686, MS705 (修正済み).pptx">
+    <div class="chips" id="chips"></div>
+    <div id="verdict"></div>
+    <ul id="findings"></ul>
+  </div>
+</section>
+
+<section id="chars">
+  <div class="sec-head"><div class="sec-num">04</div><h2>文字ルール</h2></div>
+
+  <h3>使える文字</h3>
+  <ul>
+    <li>半角英数字 <code>A-Z a-z 0-9</code></li>
+    <li>半角アンダースコア <code>_</code>（トークン区切り）と半角ハイフン <code>-</code>（語内の連結。<code>LC-MS</code>、<code>MS686-MS705</code>）</li>
+    <li>日本語（ひらがな・カタカナ・漢字）。<strong>文字だけ。全角記号は不可</strong></li>
+    <li>ドットは拡張子の直前に1個だけ</li>
+  </ul>
+
+  <h3>禁止文字</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:130px">記号</th><th>理由</th><th>社内の実例</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">半角スペース</td><td>URL で <code>%20</code> になり、リンク・スクリプトが壊れる</td><td class="mono">20251021 Synonym Bio.docx</td></tr>
+        <tr><td class="mono">全角スペース　</td><td>目視で気づけず、検索が一致しない</td><td class="mono">経費発生調書　PMS　PDF.pdf</td></tr>
+        <tr><td class="mono">＿（全角）</td><td>半角 <code>_</code> とは別文字。並び順が壊れる</td><td class="mono">20251120_面談メモ＿Agrifood Futures.docx</td></tr>
+        <tr><td class="mono">（）【】「」</td><td>全角括弧。半角と混ざると整列不能</td><td class="mono">2025-Astaxanthin13 (…, …）</td></tr>
+        <tr><td class="mono">( )</td><td>補足は <code>_</code> トークンで表す</td><td class="mono">研究チーム_日次タスク管理 (1).xlsx</td></tr>
+        <tr><td class="mono">@</td><td>日付区切りに使わない。URL エンコードで化ける</td><td class="mono">培養結果@260728.xlsx</td></tr>
+        <tr><td class="mono">★◆●▲※〜～</td><td>装飾記号。ソートが破綻する</td><td class="mono">★補助金予算管理_機械設備等.xlsx</td></tr>
+        <tr><td class="mono">, 、 。</td><td>カンマ・全角句読点</td><td class="mono">20260703_NEDO概算払請求書_86,668,441.pdf</td></tr>
+        <tr><td class="mono">&amp; # % * ? : " &lt; &gt; | / \</td><td>OS / SharePoint / URL のいずれかで予約</td><td>—</td></tr>
+        <tr><td class="mono">先頭・末尾の空白</td><td>SharePoint が保存を拒否する場合がある</td><td class="mono">20260626_面談メモ_ CIC.docx</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>長さ・大文字小文字</h3>
+  <ul>
+    <li>ファイル名は<strong>50文字以内が目安、80文字が上限</strong>。上限に当たったら削るのは補足トークンで、日付と2つのキーは削りません</li>
+    <li>SharePoint のフルパス上限は400文字。フォルダは5階層以内</li>
+    <li>コード類（PJコード・文書種別・契約管理番号）は<strong>すべて大文字</strong>：<code>THB</code> <code>DAT</code> <code>A20260019</code></li>
+  </ul>
+
+  <h3>表記ゆれは辞書で潰す</h3>
+  <div class="note alert">
+    <p><b>ルール本体より、まずこれです。</b>現在、同じドライブの中に <code>Galanthamine</code>（プロジェクトフォルダ）と <code>Galantamine菌株生産量.xlsx</code>（菌株DB）が併存しています。<code>Reticuline</code> に対して <code>Retculine</code> も同様です。</p>
+    <p>化合物名の表記ゆれは、菌株DBと実験データの突合を静かに壊します。ルールを守っても、辞書がなければ検索は当たりません。</p>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>誤 / 揺れ</th><th>正</th><th>辞書の所管</th></tr></thead>
+      <tbody>
+        <tr><td class="mono c-bad">Galantamine</td><td class="mono c-good">Galanthamine</td><td class="nowrap">研究開発部</td></tr>
+        <tr><td class="mono c-bad">Retculine</td><td class="mono c-good">Reticuline</td><td class="nowrap">研究開発部</td></tr>
+        <tr><td class="mono c-bad">BrainStoam / Fomat / templete</td><td class="mono c-good">Brainstorm / Format / template</td><td class="nowrap">各部門</td></tr>
+        <tr><td class="mono c-bad">チエックシート</td><td class="mono c-good">チェックシート</td><td class="nowrap">研究開発部</td></tr>
+        <tr><td class="mono c-bad">フェース / フェース゛</td><td class="mono c-good">フェーズ</td><td class="nowrap">事業開発部</td></tr>
+        <tr><td class="mono c-bad">群栄化学 / 群栄化学工業株式会社</td><td class="mono c-good">群栄化学工業</td><td class="nowrap">事業開発部</td></tr>
+        <tr><td class="mono c-bad">ヤエガキ発酵技研</td><td class="mono c-good">ヤヱガキ発酵技研</td><td class="nowrap">事業開発部</td></tr>
+        <tr><td class="mono c-bad">Scale Up Bio / A-star</td><td class="mono c-good">ScaleUp Bio / ASTAR</td><td class="nowrap">事業開発部</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>法人格（<code>株式会社</code> <code>Inc.</code> <code>Co., Ltd.</code>）はファイル名では省略します。例外は<strong>契約書の締結版</strong>のみで、法的正確性のため正式名称を使います。</p>
+</section>
+
+<section id="date">
+  <div class="sec-head"><div class="sec-num">05</div><h2>日付ルール</h2></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:110px">種類</th><th style="width:200px">形式</th><th>例</th></tr></thead>
+      <tbody>
+        <tr><td>単日</td><td class="mono">YYYYMMDD</td><td class="mono">20260728</td></tr>
+        <tr><td>期間</td><td class="mono">YYYYMMDD-YYYYMMDD</td><td class="mono">20250602-20250606</td></tr>
+        <tr><td>月次</td><td class="mono">YYYYMM</td><td class="mono">202608（月次文書のみ）</td></tr>
+        <tr><td>年次</td><td class="mono">YYYY / FYYYYY</td><td class="mono">FY2026_勘定科目.xlsx</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>基準日は「その文書が指す事象の日」</h3>
+  <p>保存した日ではありません。迷ったら「あとで探すとき、頭に浮かぶ日付はどれか」で決めます。</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:220px">文書</th><th>基準日</th></tr></thead>
+      <tbody>
+        <tr><td>面談メモ・議事録</td><td>会議・面談の実施日</td></tr>
+        <tr><td>契約書（締結版）</td><td>締結日</td></tr>
+        <tr><td>契約書（ドラフト）</td><td>相手先へ送付した日 / 受領した日</td></tr>
+        <tr><td>実験データ</td><td>測定日（培養なら本培養開始日）</td></tr>
+        <tr><td>報告書</td><td>報告対象期間の末日、または報告会の日</td></tr>
+        <tr><td>請求書・領収書</td><td>発行日（取引年月日）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>位置は必ず先頭</h3>
+  <div class="pairs">
+    <div class="pair no"><div class="m">✗</div><div class="fn">分析技術と技術レベル_260708_平野.pptx<span class="why">中置・6桁</span></div></div>
+    <div class="pair no"><div class="m">✗</div><div class="fn">取引先信用調査一覧_20260717.xlsx<span class="why">後置。継続更新の台帳なら日付そのものが不要</span></div></div>
+    <div class="pair no"><div class="m">✗</div><div class="fn">培養結果@260728.xlsx<span class="why">@ 区切り・6桁・主題がない</span></div></div>
+    <div class="pair no"><div class="m">✗</div><div class="fn">202511313 Astaxanthin MS686, MS705 (修正済み).pptx<span class="why">9桁の壊れた日付。20251113 のタイポ</span></div></div>
+    <div class="pair yes"><div class="m">○</div><div class="fn">20260708_COM_MTG_分析技術と技術レベル_hirano.pptx</div></div>
+    <div class="pair yes"><div class="m">○</div><div class="fn">20260728_THB_DAT_Jar培養_MS705.xlsx</div></div>
+  </div>
+  <p>例外：継続更新される台帳・マスタには日付を付けません（<code>契約管理台帳.xlsx</code>、<code>AST_DB_菌株生産量.xlsx</code>）。版は SharePoint の履歴で追います。</p>
+</section>
+
+<section id="ver">
+  <div class="sec-head"><div class="sec-num">06</div><h2>版（バージョン）ルール</h2></div>
+  <div class="note">
+    <p><b>原則：社内案に版番号を付けない。</b>SharePoint にはバージョン履歴があります。社内の編集は履歴で追えるので、<code>_v1</code> <code>_v2</code> を作らないでください。ファイルを増やすとリンクが分散します。</p>
+    <p><b>版を付けてよい唯一の場面は、社外との往復です。</b>相手に送った版・相手から受け取った版だけが、別ファイルとして固定して残す価値があります。</p>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:120px">表記</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">_v01 _v02</td><td>自社から相手先へ送付した版（連番）</td></tr>
+        <tr><td class="mono">_v02c</td><td>その版に対する相手先コメント返し（c = counterparty）</td></tr>
+        <tr><td class="mono">_vF</td><td>締結版・確定版。<strong>1案件に1つだけ</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>実例：日本曹達フェーズ2 の契約ドラフト</h3>
+  <div class="pairs">
+    <div class="pair no"><div class="m">✗</div><div class="fn">日曹-ファーメランタ_フェース゛2契約書案_0420版_FLTコメント0424.xlsx<span class="why">「ズ」が「ス+゛」に分解、日付が中置で2つ、FLT が版の意味で使われている</span></div></div>
+    <div class="pair no"><div class="m">✗</div><div class="fn">日曹-ファーメランタ_フェース２契約書案_0611_0612FLT_vSent.docx<span class="why">全角２、vSent、日付が2つ</span></div></div>
+    <div class="pair no"><div class="m">✗</div><div class="fn">日曹-ファーメランタ_フェース２契約書_vF.docx.pdf<span class="why">二重拡張子</span></div></div>
+    <div class="pair yes"><div class="m">○</div><div class="fn">20260420_契約書案_日本曹達_フェーズ2_v01.docx<span class="why">自社から送付</span></div></div>
+    <div class="pair yes"><div class="m">○</div><div class="fn">20260424_契約書案_日本曹達_フェーズ2_v01c.docx<span class="why">相手先コメント返し</span></div></div>
+    <div class="pair yes"><div class="m">○</div><div class="fn">20260617_契約書_日本曹達_フェーズ2_vF.pdf<span class="why">締結版。種別が「契約書案」から「契約書」に変わる</span></div></div>
+  </div>
+
+  <h3>禁止する版表記</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:34%">禁止</th><th>社内の実例</th><th style="width:26%">代わりに</th></tr></thead>
+      <tbody>
+        <tr><td class="mono c-bad">最新 / 修正済み / 確定 / final</td><td class="mono">…MS686, MS705 (修正済み).pptx</td><td>履歴、または <code>_vF</code></td></tr>
+        <tr><td class="mono c-bad">(1) / (2) / コピー</td><td class="mono">研究チーム_日次タスク管理 (1).xlsx</td><td>元ファイルを直接編集</td></tr>
+        <tr><td class="mono c-bad">New_ / OLD_ / new / old</td><td class="mono">New_20251222_International Event Research.xlsx</td><td>旧版は <code>_ARCHIVE/</code> へ</td></tr>
+        <tr><td class="mono c-bad">案 / （案）</td><td class="mono">20260XXX_ステージゲート運用規定（案）.docx</td><td><code>_v01</code></td></tr>
+        <tr><td class="mono c-bad">プレースホルダ未置換</td><td class="mono">業務委託者氏名_請求書_x月分_v1.xlsx</td><td>保存前に必ず置換</td></tr>
+        <tr><td class="mono c-bad">二重拡張子</td><td class="mono">…_確定docx.pdf</td><td><code>.pdf</code> のみ</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="dept">
+  <div class="sec-head"><div class="sec-num">07</div><h2>部門別ルール</h2></div>
+  <p class="lede">共通ルールを満たしたうえで、部門ごとに第1キー・第2キーを定義します。覚えるのは各部門3パターンだけです。</p>
+
+  <div class="dept">
+    <div class="dept-h"><span class="nm">研究開発部</span><span class="tag">主題が先</span><span class="st">現状 ★☆☆☆☆ — 命名軸そのものが未定義</span></div>
+    <div class="dept-b">
+      <div class="spec">
+        <div class="spec-row">
+          <div class="tok"><div class="v">20260728</div><div class="l">測定日</div></div>
+          <div class="sep">_</div>
+          <div class="tok"><div class="v">THB</div><div class="l">PJコード</div></div>
+          <div class="sep">_</div>
+          <div class="tok"><div class="v">DAT</div><div class="l">文書種別</div></div>
+          <div class="sep">_</div>
+          <div class="tok"><div class="v">Jar培養</div><div class="l">内容</div></div>
+          <div class="sep">_</div>
+          <div class="tok opt"><div class="v">MS705</div><div class="l">菌株・条件</div></div>
+          <div class="tok"><div class="v">.xlsx</div><div class="l"></div></div>
+        </div>
+      </div>
+      <h4>PJコード（第1キー）</h4>
+      <p><code>AST</code> Astaxanthin ／ <code>LYC</code> Lycopene ／ <code>CAR</code> Carotenoid ／ <code>CBD</code> Cannabinoid ／ <code>FLV</code> Flavonoids ／ <code>KMP</code> Kaempferol ／ <code>HEP</code> Heparin ／ <code>RES</code> Resveratrol ／ <code>THB</code> Thebaine ／ <code>RTC</code> Reticuline ／ <code>GAL</code> Galanthamine ／ <code>ALK</code> Alkaloid ／ <code>PUR</code> 精製 ／ <code>FND</code> Fundamental ／ <code>PLT</code> パイロットプラント ／ <code>ANA</code> 分析基盤 ／ <code>COM</code> 部門共通</p>
+      <h4>文書種別コード（第2キー）</h4>
+      <p><code>PLN</code> 計画 ／ <code>INS</code> 指示書 ／ <code>PRT</code> プロトコル ／ <code>SOP</code> 標準作業手順書 ／ <code>EXP</code> 実験記録 ／ <code>DAT</code> 測定データ ／ <code>ANL</code> 解析 ／ <code>RPT</code> 報告書 ／ <code>MTG</code> 会議 ／ <code>REF</code> 文献・SDS ／ <code>DB</code> 台帳（日付なし） ／ <code>TPL</code> テンプレート（日付なし） ／ <code>PUB</code> 論文・学会 ／ <code>ADM</code> 庶務</p>
+      <h4>菌株・条件トークン</h4>
+      <p>菌株IDは必ず <code>MS</code>＋数字。複数株は <code>-</code> 連結。条件はカンマではなく <code>-</code> で繋ぎます。</p>
+      <div class="pairs">
+        <div class="pair no"><div class="m">✗</div><div class="fn">2025-Astaxanthin14 (Jar, KWB, pH7.6, MS705, MS910, 抽出条件 Acetone vs EtOH)<span class="why">実験シリーズフォルダ。全角括弧・カンマ・60文字</span></div></div>
+        <div class="pair yes"><div class="m">○</div><div class="fn">2025_AST_014_Jar抽出溶媒比較_MS705-MS910<span class="why">連番3桁ゼロ埋め。詳細条件はフォルダ直下の README に書く</span></div></div>
+      </div>
+      <h4>変換例</h4>
+      <div class="pairs">
+        <div class="pair no"><div class="m">✗</div><div class="fn">培養結果@260728.xlsx</div></div>
+        <div class="pair yes"><div class="m">○</div><div class="fn">20260728_THB_DAT_Jar培養_MS705.xlsx</div></div>
+        <div class="pair no"><div class="m">✗</div><div class="fn">260803_指示書_河端さん.docx</div></div>
+        <div class="pair yes"><div class="m">○</div><div class="fn">20260803_COM_INS_日次指示_河端.docx</div></div>
+        <div class="pair no"><div class="m">✗</div><div class="fn">Galantamine菌株生産量.xlsx</div></div>
+        <div class="pair yes"><div class="m">○</div><div class="fn">GAL_DB_菌株生産量.xlsx<span class="why">台帳は日付なし。スペルも修正</span></div></div>
+      </div>
+      <div class="note">
+        <p><b>個人フォルダは作業場であって、成果の保管場所ではありません。</b>現在 <code>Member/</code> 配下に19GB、うち1人の <code>download files</code> だけで12.9GB あり、<code>Project/</code> 全体（17.4GB）に匹敵する量が個人フォルダに滞留しています。共有すべき成果は <code>Project/&lt;化合物&gt;/</code> へ。</p>
+        <p>フォルダ名は <code>&lt;姓&gt;_&lt;名&gt;</code> で<b>1人1フォルダ</b>。現在 <code>chino</code> と <code>Tomoki Chino</code> が同一人物で2つ存在し、<code>Freddy Chen</code> は空です。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dept">
+    <div class="dept-h"><span class="nm">事業開発部</span><span class="tag">種別が先</span><span class="st">現状 ★★★★☆ — 面談メモは社内最良。逸脱15%</span></div>
+    <div class="dept-b">
+      <div class="spec">
+        <div class="spec-row">
+          <div class="tok"><div class="v">20250109</div><div class="l">面談実施日</div></div>
+          <div class="sep">_</div>
+          <div class="tok"><div class="v">面談メモ</div><div class="l">文書種別</div></div>
+          <div class="sep">_</div>
+          <div class="tok"><div class="v">神戸天然物化学</div><div class="l">相手先</div></div>
+          <div class="sep">_</div>
+          <div class="tok opt"><div class="v">案件</div><div class="l">任意</div></div>
+          <div class="tok"><div class="v">.docx</div><div class="l"></div></div>
+        </div>
+      </div>
+      <h4>文書種別（日本語・同義語を使わない）</h4>
+      <div class="tw">
+        <table>
+          <thead><tr><th style="width:200px">使う</th><th>使わない</th></tr></thead>
+          <tbody>
+            <tr><td class="mono c-good">面談メモ</td><td class="mono c-bad">面談 / 打ち合わせメモ / 打合せ / mtg</td></tr>
+            <tr><td class="mono c-good">議事録</td><td class="mono c-bad">議題録 / メモ</td></tr>
+            <tr><td class="mono c-good">提案書</td><td class="mono c-bad">ご提案 / 提案資料</td></tr>
+            <tr><td class="mono c-good">見積書 / 請求書</td><td class="mono c-bad">御見積書 / 御請求書 / ご請求書</td></tr>
+            <tr><td class="mono c-good">契約書案 / 契約書</td><td class="mono c-bad">契約案 / ドラフト / 案</td></tr>
+            <tr><td class="mono c-good">調査 / 視察報告</td><td class="mono c-bad">リサーチ / Research / 出張報告</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>面談メモの逸脱（約20件、大半は機械的に修正可能）</h4>
+      <div class="pairs">
+        <div class="pair no"><div class="m">✗</div><div class="fn">20260626_面談メモ_ CIC.docx<span class="why">第3トークン先頭の半角スペース。約15件</span></div></div>
+        <div class="pair no"><div class="m">✗</div><div class="fn">20250820 _面談メモ_松田電機工業所.docx<span class="why">スペースと _ の混在</span></div></div>
+        <div class="pair no"><div class="m">✗</div><div class="fn">20251006 面談 Ferrero.docx<span class="why">全部スペース区切り・種別の表記ゆれ</span></div></div>
+        <div class="pair no"><div class="m">✗</div><div class="fn">20251020_三谷産業生田さん_打ち合わせメモ.docx<span class="why">語順逆転・個人名</span></div></div>
+        <div class="pair no"><div class="m">✗</div><div class="fn">2026035_面談メモ_Lallemand.docx<span class="why">7桁の壊れた日付</span></div></div>
+        <div class="pair yes"><div class="m">○</div><div class="fn">20260305_面談メモ_Lallemand.docx</div></div>
+      </div>
+      <h4>案件フォルダ</h4>
+      <p><code>YYYYMMDD_&lt;相手先&gt;_&lt;契約種別/案件&gt;</code>。日付は初回接触日または最初の締結日で固定し、以後変えません。</p>
+      <div class="pairs">
+        <div class="pair no"><div class="m">✗</div><div class="fn">20251113 ASTAR SIFBI NDA<span class="why">スペース区切り</span></div></div>
+        <div class="pair no"><div class="m">✗</div><div class="fn">202608 BBGI MOU<span class="why">年月のみ。案件フォルダは日まで特定する</span></div></div>
+        <div class="pair no"><div class="m">✗</div><div class="fn">20260702_東京化成<span class="why">契約種別がなく、中身が判別できない</span></div></div>
+        <div class="pair no"><div class="m">✗</div><div class="fn">三菱商事ライフサイエンス<span class="why">日付なし。20260623_三菱商事ライフサイエンス と同階層に併存</span></div></div>
+        <div class="pair yes"><div class="m">○</div><div class="fn">20260406_日本曹達_フェーズ2</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dept">
+    <div class="dept-h"><span class="nm">管理部</span><span class="tag">種別が先</span><span class="st">現状 ★★★★★（法務）／ ★★☆☆☆（経理）</span></div>
+    <div class="dept-b">
+      <div class="note alert">
+        <p><b>証憑の命名は、整理整頓ではなく法令対応です。</b>電子帳簿保存法は<b>取引年月日・取引金額・取引先</b>での検索を要求します。現在 <code>02.経理</code> 直下に、この3項目のどれも満たさないファイルが30件以上滞留しています。</p>
+        <p class="mono" style="font-size:12px;color:inherit;">0800062279_0097081713_0000007700465352.pdf ／ file_2359.pdf ／ print.pdf ／ FEDEX0707-1.pdf ／ IMG_6157.jpeg ／ NTT振込0729.pdf ／ クルーズ.pdf ／ 地方税延滞金.pdf ／ 202607021745527137.zip</p>
+      </div>
+      <h4>証憑（請求書・領収書・支払明細）</h4>
+      <div class="spec">
+        <div class="spec-row">
+          <div class="tok"><div class="v">20260714</div><div class="l">取引年月日</div></div>
+          <div class="sep">_</div>
+          <div class="tok"><div class="v">日本曹達</div><div class="l">取引先</div></div>
+          <div class="sep">_</div>
+          <div class="tok"><div class="v">請求書</div><div class="l">書類種別</div></div>
+          <div class="sep">_</div>
+          <div class="tok"><div class="v">97588</div><div class="l">税込金額・カンマなし</div></div>
+          <div class="tok"><div class="v">.pdf</div><div class="l"></div></div>
+        </div>
+        <p class="spec-note">業者が発行した PDF は、<strong>受領した時点でリネームします</strong>。研究開発部の機器生データとは扱いが逆です。<code>02.経理</code> 直下への直置きは禁止で、<code>&lt;年度&gt;/&lt;月&gt;/</code> へ入れます。</p>
+      </div>
+      <h4>契約書 — 全社テンプレート</h4>
+      <p>現行の法務の命名が社内で最も完成度が高く、これを全社の手本にします。</p>
+      <div class="spec">
+        <div class="spec-row">
+          <div class="tok"><div class="v">20260212</div><div class="l">締結日</div></div>
+          <div class="sep">_</div>
+          <div class="tok"><div class="v">CONFIDENTIAL DISCLOSURE AGREEMENT</div><div class="l">契約書正式名称</div></div>
+          <div class="sep">_</div>
+          <div class="tok"><div class="v">BBGI Public Company Limited</div><div class="l">相手先正式名称</div></div>
+          <div class="sep">_</div>
+          <div class="tok"><div class="v">A20260019</div><div class="l">契約管理番号</div></div>
+          <div class="tok"><div class="v">.pdf</div><div class="l"></div></div>
+        </div>
+      </div>
+      <p>契約管理番号は <code>&lt;区分1文字&gt;&lt;西暦4桁&gt;&lt;連番4桁&gt;</code>。区分記号はフォルダ名と一致します。</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th style="width:60px">区分</th><th>フォルダ</th><th>内容</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">A</td><td class="mono">A_NDA</td><td>秘密保持契約</td></tr>
+            <tr><td class="mono">B</td><td class="mono">B_ベンダー基本契約, 業務委託契約</td><td>ベンダー基本・業務委託</td></tr>
+            <tr><td class="mono">C</td><td class="mono">C_PoC, 共同研究, ライセンス</td><td>PoC・共同研究・ライセンス</td></tr>
+            <tr><td class="mono">D</td><td class="mono">D_クライアント製造, 販売</td><td>製造・販売</td></tr>
+            <tr><td class="mono">E</td><td class="mono">E_人材紹介</td><td>人材紹介</td></tr>
+            <tr><td class="mono">Y</td><td class="mono">Y_投資契約</td><td>投資・金融</td></tr>
+            <tr><td class="mono">Z</td><td class="mono">Z_その他</td><td>その他</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>未締結の表し方</h4>
+      <div class="pairs">
+        <div class="pair no"><div class="m">✗</div><div class="fn">[未] Profluent Bio Inc ／ [未]Bioforge ／ [未？] シーエムプラス<span class="why">3通りに揺れ、角括弧接頭辞がソートも壊す</span></div></div>
+        <div class="pair yes"><div class="m">○</div><div class="fn">A_NDA/99_交渉中/Profluent Bio Inc/<span class="why">締結したらフォルダごと上位へ移動</span></div></div>
+      </div>
+      <h4>個人情報</h4>
+      <ul>
+        <li><strong>ファイル名にフルネームを入れない。</strong>検索インデックスと共有リンクの経路で、権限外に氏名が見えるリスクがあります</li>
+        <li>履歴書・評価・給与などは <code>YYYYMMDD_&lt;書類種別&gt;_&lt;社員番号&gt;.pdf</code>。氏名と社員番号の対応表は制限付きフォルダに置きます</li>
+        <li><strong>ID・パスワードをファイル名に含めない</strong>（現行に <code>…口座振替案内とIDPW_&lt;氏名&gt;.pdf</code> があります）</li>
+      </ul>
+      <h4>フォルダ番号の衝突（即時解消）</h4>
+      <div class="tw">
+        <table>
+          <thead><tr><th style="width:46%">現行の衝突</th><th>対応</th></tr></thead>
+          <tbody>
+            <tr><td class="mono c-bad">08.広報 と 08.法務</td><td class="mono">08_広報 / 10_法務</td></tr>
+            <tr><td class="mono c-bad">08.法務 と 081.法務 _new（並存）</td><td class="mono">10_法務 に統合。旧は _ARCHIVE/ へ</td></tr>
+            <tr><td class="mono c-bad">06.銀行出納作業履歴 と 06.銀行口座管理</td><td class="mono">06_銀行口座管理 / 07_銀行出納作業履歴</td></tr>
+            <tr><td class="mono c-bad">05.給与計算用提出資料 と 05.給与賞与</td><td class="mono">05_給与賞与 / 06_給与計算用提出資料</td></tr>
+            <tr><td class="mono c-bad">20.安藤社労士事務所 と 20.響きパートナーズ</td><td class="mono">20_安藤社労士事務所 / 21_響きパートナーズ</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="exempt">
+  <div class="sec-head"><div class="sec-num">08</div><h2>例外：リネームしてはいけないファイル</h2></div>
+  <p class="lede">以下は原名のまま保存します。リネームすると業務が壊れます。</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:26%">種類</th><th>社内の例</th><th style="width:28%">扱い</th></tr></thead>
+      <tbody>
+        <tr><td>分析機器の生データ</td><td>LC-MS / NMR / qPCR の出力</td><td><code>00_raw/</code> に原名格納。同階層に <code>00_raw_index.xlsx</code> で対応表を持つ</td></tr>
+        <tr><td>相手先から受領した契約ドラフト</td><td>相手先が命名した <code>.docx</code></td><td><code>10_受領/</code> に原名格納。自社編集版から命名ルール適用</td></tr>
+        <tr><td>補助金・行政の指定様式</td><td class="mono">Ⅱ-D1_提案書__バイオセン_….pdf ／ BY_r7h_fspoc_260417.pdf</td><td>提出物は指定名を厳守。<code>&lt;YYYYMMDD&gt;_提出/</code> に原名格納</td></tr>
+        <tr><td>Teams 会議録画・Loop ノート</td><td class="mono">全社会議（隔週水曜日）-20260617_155947-会議の録音.mp4</td><td>自動生成名のまま。恒久保管する分だけ、移動時にリネーム</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">
+    <p><b>業者発行の請求書・領収書は例外ではありません。</b>受領時のリネームが必須です。研究データは装置ソフトが原名に依存するため原名保持、証憑は法令の検索要件が優先されるためリネーム — この非対称を覚えてください。</p>
+  </div>
+</section>
+
+<section id="folder">
+  <div class="sec-head"><div class="sec-num">09</div><h2>フォルダ命名</h2></div>
+  <ul>
+    <li>基本は <code>&lt;NN&gt;_&lt;名称&gt;</code>。番号は<strong>一意</strong>にします</li>
+    <li>サブフォルダの連番は<strong>10刻み</strong>（<code>00_</code> <code>10_</code> <code>20_</code> <code>99_</code>）。後から <code>05_</code> <code>15_</code> を挿入できます。管理部の契約フォルダが既にこの形で、全社標準に昇格させます</li>
+    <li><code>99_</code> の用途は<strong>「参考資料」に固定</strong>します</li>
+    <li>階層は5階層以内、フォルダ名は30文字以内が目安</li>
+    <li>人名フォルダは <code>&lt;姓&gt;_&lt;名&gt;</code> で1人1フォルダ</li>
+    <li>絵文字・装飾記号は使いません（<code>01.ニュース📢</code> → <code>01_ニュース</code>）</li>
+  </ul>
+
+  <h3>一時置き場は作らない</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:46%">現行（新規作成は禁止）</th><th>移動先</th></tr></thead>
+      <tbody>
+        <tr><td class="mono c-bad">99.削除予定（6.4GB・事業開発部）</td><td class="mono">_ARCHIVE/YYYY/</td></tr>
+        <tr><td class="mono c-bad">08.知財（削除予定）（636MB）</td><td class="mono">管理部 30.知財 が正。削除またはリンク</td></tr>
+        <tr><td class="mono c-bad">99.後で整理する / 99.経理_old / 99_obsolete</td><td class="mono">_ARCHIVE/YYYY/</td></tr>
+        <tr><td class="mono c-bad">たぶん不要 / 99_未分類 / 一時保管フォルダ / 99_workspace</td><td>分類、または <code>_ARCHIVE/</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>同じファイルを2箇所に置かない</h3>
+  <p>現在、以下が複数箇所に重複しています。原本を1つ決め、もう一方は共有リンクにします。</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:42%">重複しているファイル</th><th>原本にすべき場所</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">ファーメランタ_発表ひな形251021.pptx</td><td>研究開発部 <code>Project/精製プロジェクト/</code></td></tr>
+        <tr><td class="mono">日本曹達…請求書_20260714.pdf</td><td>管理部 <code>02.経理/</code></td></tr>
+        <tr><td class="mono">BY_r7h_fspoc_260417.pdf</td><td>管理部 <code>04.助成金/&lt;制度&gt;/</code></td></tr>
+        <tr><td class="mono">④関係する研究開発テーマの事後評価報告書（写）.pdf</td><td>管理部 <code>04.助成金/&lt;制度&gt;/</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="where">
+  <div class="sec-head"><div class="sec-num">10</div><h2>保存場所ルール</h2></div>
+  <div class="note alert">
+    <p><b>命名を整えても、置き場所がバラバラだと検索できません。</b>調査中、業務上重要な文書が部門サイトではなく個人 OneDrive と Teams チャットに保存されているケースを多数確認しました。</p>
+    <p class="mono" style="font-size:12px;color:inherit;">260810Fermelanta_R&amp;D方針_チームリーダー会議.pptx ／ LC-MS培養影響因子探索ソフト開発提案_20260828.docx ／ RDチームチエックシート_チーム名_年月日.docx ／ チームリーダー会議アジェンダ2026.xlsx ／ 技術連携室候補者.pdf ／ 経営会議・チームリーダー会議の録画とLoopノート</p>
+    <p><b>個人 OneDrive は退職時に失われます。</b></p>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:40%">種類</th><th>保存先</th></tr></thead>
+      <tbody>
+        <tr><td>部門の業務成果物（報告書・議事録・契約・データ）</td><td><strong>必ず部門チームサイト。</strong>個人 OneDrive 不可</td></tr>
+        <tr><td>作成途中の個人作業ファイル</td><td>個人 OneDrive 可。<strong>完成した時点でチームサイトへ移動</strong></td></tr>
+        <tr><td>Teams チャットに添付したファイル</td><td>添付は共有手段。原本はチームサイトに置き、<strong>チャットにはリンクを貼る</strong></td></tr>
+        <tr><td>会議の録画・自動議事録</td><td>既定の保存先のまま。恒久保管が必要なものだけ移動</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="sec-head"><div class="sec-num">11</div><h2>移行計画</h2></div>
+  <div class="note">
+    <p><b>既存ファイルは原則リネームしません。</b>数十万件を一括で変えると、リンク切れ・Excel の外部参照切れ・過去のメールからの到達不能が発生します。新規ファイルから適用し、一括リネームは費用対効果の高い3領域に限定します。</p>
+  </div>
+  <div class="phases">
+    <div class="phase">
+      <div class="p">PHASE 0<span>〜9/30</span></div>
+      <div class="b">
+        <h4>辞書を作る</h4>
+        <p>ルール本体より先にこれをやります。辞書がないと、ルールを守っても検索が当たりません。</p>
+        <ul>
+          <li>取引先名辞書 — 事業開発部</li>
+          <li>化合物・菌株・PJコード辞書 — 研究開発部</li>
+          <li>助成金・制度略称辞書 — 管理部</li>
+        </ul>
+        <p style="margin-top:8px;">同時に<strong>禁止文字だけ全社周知</strong>。説明が1分で済み、効果が最も大きい項目です。</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="p">PHASE 1<span>10/1〜</span></div>
+      <div class="b">
+        <h4>新規ファイルに適用</h4>
+        <p>新しく作るファイルのみルール適用。既存は触りません。各部門で「よく使う3パターン」だけ覚えます。テンプレート（<code>.dotx</code> <code>.xltx</code> <code>.potx</code>）の既定名をルール準拠にして、手作業を減らします。</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="p">PHASE 2<span>11月〜1月</span></div>
+      <div class="b">
+        <h4>限定的な一括リネーム</h4>
+        <ul>
+          <li><strong>管理部：経理直下の証憑</strong>（最優先・法令対応）。金額と取引先は中身を見る必要があるため手作業</li>
+          <li><strong>事業開発部：面談メモの逸脱 約20件</strong>。先頭スペース・全角<code>＿</code>・スペース区切りの15件は機械処理可能</li>
+          <li><strong>研究開発部：指示書の6桁日付 約45件</strong>。完全に規則的なので正規表現で一括変換</li>
+        </ul>
+        <p style="margin-top:8px;">SharePoint のドキュメントIDリンクは追随しますが、<strong>パス直書きのリンクと Excel の外部参照は切れます</strong>。実行前に一覧を CSV で出し、担当部門がレビューします。</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="p">PHASE 3<span>1月〜3月</span></div>
+      <div class="b">
+        <h4>構造の整理</h4>
+        <p>フォルダ番号の衝突解消、一時置き場の解消、<code>08.法務</code> と <code>081.法務 _new</code> の統合、重複ファイルのリンク置換、個人 OneDrive に滞留する業務文書のチームサイト移設。</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="p">PHASE 4<span>継続</span></div>
+      <div class="b">
+        <h4>四半期チェック</h4>
+        <p>情報管理担当が四半期ごとにスキャンし、部門長へ報告します。判定項目：禁止文字／日付8桁でない／禁止版表記／プレースホルダ未置換／二重拡張子／80文字超／一時置き場フォルダの存在。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="list">
+  <div class="sec-head"><div class="sec-num">12</div><h2>保存前チェックリスト</h2></div>
+  <p class="lede">10秒で確認できます。印刷して手元に置いてください。</p>
+  <div class="cl">
+    <label><input type="checkbox"><span>先頭は<strong>8桁の日付</strong>か（<code>260803</code> や <code>2026035</code> になっていないか）</span></label>
+    <label><input type="checkbox"><span>日付は<strong>その文書が指す事象の日</strong>か（保存日ではないか）</span></label>
+    <label><input type="checkbox"><span>区切りは<strong>半角 <code>_</code></strong> だけか（スペース・全角 <code>＿</code> が混ざっていないか）</span></label>
+    <label><input type="checkbox"><span><strong>禁止文字</strong>はないか（<code>　</code> <code>（）</code> <code>【】</code> <code>★</code> <code>@</code> <code>&amp;</code> <code>,</code>）</span></label>
+    <label><input type="checkbox"><span>トークンの<strong>先頭・末尾にスペース</strong>がないか</span></label>
+    <label><input type="checkbox"><span>取引先・化合物の表記は<strong>辞書どおり</strong>か</span></label>
+    <label><input type="checkbox"><span>版は <code>_v01</code> <code>_vF</code> か（<code>最新</code> <code>修正済み</code> <code>(1)</code> でないか）</span></label>
+    <label><input type="checkbox"><span><strong>社内案に版番号を付けていない</strong>か（履歴で足りる）</span></label>
+    <label><input type="checkbox"><span>拡張子は<strong>1つ</strong>か（<code>.docx.pdf</code> でないか）</span></label>
+    <label><input type="checkbox"><span>プレースホルダ（<code>XXX</code> <code>x月</code> <code>氏名</code>）が残っていないか</span></label>
+    <label><input type="checkbox"><span>80文字以内か</span></label>
+    <label><input type="checkbox"><span><strong>個人 OneDrive ではなくチームサイト</strong>に置いているか</span></label>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="sec-head"><div class="sec-num">13</div><h2>よくある質問</h2></div>
+
+  <details open><summary><span></span><span>装置から出てきたデータもリネームが必要ですか</span></summary>
+    <div class="ans"><p><strong>不要です。</strong><code>00_raw/</code> に原名のまま入れてください。装置ソフトが原名に依存します。同じ階層に <code>00_raw_index.xlsx</code> を置き、原名と実験ID・サンプルIDの対応を記録します。解析後に人が作った Excel や PowerPoint から、ルールを適用します。</p></div>
+  </details>
+  <details><summary><span></span><span>業者からもらった請求書 PDF もリネームが必要ですか</span></summary>
+    <div class="ans"><p><strong>必要です。</strong>研究データとは逆になります。電子帳簿保存法が取引年月日・取引金額・取引先での検索を求めるためです。<code>20260714_日本曹達_請求書_97588.pdf</code></p></div>
+  </details>
+  <details><summary><span></span><span>「社内案に版番号を付けない」のに、契約ドラフトには付けるのはなぜですか</span></summary>
+    <div class="ans"><p>社内の編集は SharePoint の履歴で全部追えます。一方、<strong>外部に送った版は「そのとき相手が見たもの」として固定して残す必要がある</strong>からです。社外との往復だけが、別ファイルとして残す価値のある版です。</p></div>
+  </details>
+  <details><summary><span></span><span>日付は「作った日」ですか「会議の日」ですか</span></summary>
+    <div class="ans"><p>会議の日です。基準日はその文書が指す事象の日。迷ったら「あとで探すとき、頭に浮かぶ日付はどれか」で決めてください。会議後に資料を更新しても、日付は変えません。更新は履歴に残ります。</p></div>
+  </details>
+  <details><summary><span></span><span>日本語と英語が混ざってもいいですか</span></summary>
+    <div class="ans"><p><strong>混在は問題ありません。</strong><code>20260728_THB_DAT_Jar培養_MS705.xlsx</code> は正しい形です。問題は同じものを2通りに書くこと（<code>Galantamine</code>／<code>Galanthamine</code>）です。</p></div>
+  </details>
+  <details><summary><span></span><span>トークンが多くなりすぎます</span></summary>
+    <div class="ans"><p>日付を含めて7個以上になったら、<strong>フォルダ階層で表すべき情報がファイル名に流れ込んでいます。</strong>どのトークンがフォルダ名と重複しているか確認してください。</p></div>
+  </details>
+  <details><summary><span></span><span>同じ日に同じ相手と2回打ち合わせました</span></summary>
+    <div class="ans"><p>末尾に <code>_02</code> を付けます。<code>20250714_面談メモ_KHネオケム_02.docx</code></p></div>
+  </details>
+  <details><summary><span></span><span>既存のファイルを全部リネームしないといけませんか</span></summary>
+    <div class="ans"><p><strong>いいえ。</strong>新規ファイルからで結構です。一括リネームは3領域（管理部の証憑、事業開発部の面談メモ、研究開発部の指示書）だけです。</p></div>
+  </details>
+  <details><summary><span></span><span>リネームするとリンクが切れませんか</span></summary>
+    <div class="ans"><p>SharePoint のドキュメントID（<code>?d=</code> を含む共有リンク）は追随します。<strong>パスを直書きしたリンクと Excel の外部参照は切れます。</strong>一括リネーム前に、対象を参照している Excel を確認してください。</p></div>
+  </details>
+  <details><summary><span></span><span>Teams チャットにファイルを添付してもいいですか</span></summary>
+    <div class="ans"><p>添付は共有手段です。<strong>原本はチームサイトに置き、チャットにはリンクを貼ってください。</strong>チャット添付は投稿者の OneDrive に保存され、部門で検索できません。</p></div>
+  </details>
+  <details><summary><span></span><span>ルールに当てはまらない文書が出てきました</span></summary>
+    <div class="ans"><p>辞書に載っていない文書種別・取引先が出たら、<strong>まず辞書へ追加してください。</strong>無理に既存コードへ押し込めると、あとで検索できなくなります。判断に迷う場合は情報管理担当へ。</p></div>
+  </details>
+</section>
+
+</main>
+
+<footer>
+  <span><b>FLT-STD-001</b> ファイル命名規程 Ver. 1.0 — 2026年9月8日制定</span>
+  <span>所管：管理部 情報管理　／　適用開始：2026年10月1日</span>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var input = document.getElementById('fn');
+  var out = document.getElementById('findings');
+  var verdict = document.getElementById('verdict');
+  var chipbox = document.getElementById('chips');
+
+  var samples = [
+    "202511313 Astaxanthin MS686, MS705 (修正済み).pptx",
+    "培養結果@260728.xlsx",
+    "20260626_面談メモ_ CIC.docx",
+    "20260703_NEDO概算払請求書_86,668,441.pdf",
+    "日曹-ファーメランタ_フェース２契約書_vF.docx.pdf",
+    "業務委託者氏名_請求書_x月分_v1.xlsx",
+    "20260728_THB_DAT_Jar培養_MS705.xlsx",
+    "20260212_CONFIDENTIAL DISCLOSURE AGREEMENT_BBGI Public Company Limited_A20260019.pdf"
+  ];
+
+  samples.forEach(function(s){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'chip';
+    b.textContent = s;
+    b.title = s;
+    b.addEventListener('click', function(){ input.value = s; run(); input.focus(); });
+    chipbox.appendChild(b);
+  });
+
+  // 契約書の締結版は正式名称のため半角スペースを許容する
+  function isContractFinal(name){
+    return /_[A-Z]\d{8}\.[A-Za-z0-9]+$/.test(name);
+  }
+
+  function validDate(s){
+    var y = +s.slice(0,4), m = +s.slice(4,6), d = +s.slice(6,8);
+    if (y < 2000 || y > 2100 || m < 1 || m > 12 || d < 1 || d > 31) return false;
+    var dt = new Date(y, m-1, d);
+    return dt.getFullYear() === y && dt.getMonth() === m-1 && dt.getDate() === d;
+  }
+
+  function check(raw){
+    var f = [];
+    var name = raw.trim();
+    if (!name) return f;
+
+    var dot = name.lastIndexOf('.');
+    var base = dot > 0 ? name.slice(0, dot) : name;
+    var contractFinal = isContractFinal(name);
+
+    // --- 日付 ---
+    var m8 = /^(\d{8})_/.exec(base);
+    var mLoose = /^(\d{4,9})[_ ]/.exec(base);
+    if (m8 && validDate(m8[1])) {
+      f.push(['ok', '先頭に妥当な8桁の日付があります（<b>' + m8[1] + '</b>）']);
+    } else if (mLoose) {
+      f.push(['ng', '先頭の日付が <b>' + mLoose[1] + '</b>（' + mLoose[1].length + '桁）です。<b>YYYYMMDD の8桁</b>にしてください']);
+    } else if (m8) {
+      f.push(['ng', '<b>' + m8[1] + '</b> は存在しない日付です。桁落ちやタイポの可能性があります']);
+    } else if (/^[A-Z]{2,4}_(DB|TPL)_/.test(base) || /^(契約管理台帳|FY\d{4})/.test(base)) {
+      f.push(['ok', '継続更新の台帳・マスタと判定しました。日付は不要です']);
+    } else {
+      f.push(['ng', '先頭に <b>YYYYMMDD</b> の日付がありません']);
+    }
+
+    // --- 文字 ---
+    if (/^\s|\s$/.test(raw)) f.push(['ng', '先頭または末尾に<b>空白</b>があります']);
+    if (/　/.test(name)) f.push(['ng', '<b>全角スペース</b>が含まれています']);
+    if (/＿/.test(name)) f.push(['ng', '<b>全角アンダースコア ＿</b> が含まれています。半角 <b>_</b> にしてください']);
+    if (/[（）【】「」〔〕＜＞]/.test(name)) f.push(['ng', '<b>全角括弧</b>が含まれています']);
+    if (/[()]/.test(name)) f.push(['ng', '<b>半角括弧</b>が含まれています。補足は <b>_</b> トークンで表します']);
+    if (/@/.test(name)) f.push(['ng', '<b>@</b> が含まれています。日付区切りには使いません']);
+    if (/[,、。，]/.test(name)) f.push(['ng', '<b>カンマ・全角句読点</b>が含まれています']);
+    if (/[★◆●▲※〜～]/.test(name)) f.push(['ng', '<b>装飾記号</b>が含まれています']);
+    if (/[&#%*?:"<>|\\/]/.test(name)) f.push(['ng', '<b>予約文字</b>（&amp; # % * ? : " &lt; &gt; | / \\）が含まれています']);
+    if (/_\s|\s_/.test(name)) f.push(['ng', '<b>_ の前後に空白</b>があります']);
+    else if (/ /.test(name)) {
+      if (contractFinal) f.push(['wa', '半角スペースがありますが、<b>契約書の締結版</b>と判定しました。正式名称のため許容されます']);
+      else f.push(['ng', '<b>半角スペース</b>が含まれています。区切りは <b>_</b> です']);
+    }
+
+    // --- 版 ---
+    if (/(最新|修正済|訂正済|確定版|final|ver\d|Ver\d|コピー|\(\d+\)|vSent|（案）|_案)/i.test(base))
+      f.push(['ng', '<b>禁止された版表記</b>が含まれています。<b>_v01</b> / <b>_vF</b> を使ってください']);
+    if (/(^|_)(new|old)_/i.test(base))
+      f.push(['ng', '<b>New_ / OLD_</b> 接頭辞は使いません。旧版は <b>_ARCHIVE/</b> へ']);
+    if (/_v(\d{2}c?|F)$/.test(base))
+      f.push(['ok', '版表記が正しい形式です']);
+
+    // --- 拡張子 ---
+    if (/\.(docx?|xlsx?|pptx?)\.(pdf|docx?|xlsx?|pptx?)$/i.test(name))
+      f.push(['ng', '<b>二重拡張子</b>です。拡張子は1つにしてください']);
+    if (dot < 0) f.push(['wa', '拡張子がありません']);
+
+    // --- プレースホルダ ---
+    if (/(XXX|ｘ月|x月|氏名|＜|＞|<|>|TBD|未定)/.test(base))
+      f.push(['ng', '<b>プレースホルダ</b>が残っています。保存前に置換してください']);
+
+    // --- 長さ・トークン数 ---
+    if (name.length > 80) f.push(['ng', '<b>' + name.length + '文字</b>です。80文字を超えています']);
+    else if (name.length > 50) f.push(['wa', '<b>' + name.length + '文字</b>です。50文字以内が目安です']);
+
+    var toks = base.split('_').filter(function(t){ return t.length; });
+    if (toks.length >= 3 && toks.length <= 6) f.push(['ok', 'トークン数 <b>' + toks.length + '</b>（3〜6の範囲内）']);
+    else if (toks.length > 6) f.push(['ng', 'トークン数 <b>' + toks.length + '</b>。フォルダ階層で表すべき情報が名前に入っています']);
+    else if (toks.length < 3) f.push(['wa', 'トークン数 <b>' + toks.length + '</b>。日付・第1キー・第2キーで最低3つ必要です']);
+
+    // --- 表記ゆれ ---
+    var typos = [['Galantamine','Galanthamine'],['Retculine','Reticuline'],['BrainStoam','Brainstorm'],
+                 ['Fomat','Format'],['templete','template'],['チエック','チェック'],['フェース','フェーズ']];
+    typos.forEach(function(t){
+      if (name.indexOf(t[0]) >= 0) f.push(['ng', '表記ゆれ：<b>' + t[0] + '</b> → <b>' + t[1] + '</b>']);
+    });
+
+    return f;
+  }
+
+  function run(){
+    var res = check(input.value);
+    out.innerHTML = '';
+    var ng = 0, wa = 0;
+    res.forEach(function(r){
+      if (r[0] === 'ng') ng++;
+      if (r[0] === 'wa') wa++;
+      var li = document.createElement('li');
+      li.className = r[0];
+      li.innerHTML = '<span class="m">' + (r[0]==='ng'?'✗':r[0]==='wa'?'!':'○') + '</span><span>' + r[1] + '</span>';
+      out.appendChild(li);
+    });
+    if (!input.value.trim()) {
+      verdict.innerHTML = '';
+      return;
+    }
+    if (ng > 0) verdict.innerHTML = '<span class="badge ng">要修正</span><span>' + ng + '件の違反' + (wa ? '、' + wa + '件の注意' : '') + '</span>';
+    else if (wa > 0) verdict.innerHTML = '<span class="badge ok">合格</span><span>違反なし。' + wa + '件の注意があります</span>';
+    else verdict.innerHTML = '<span class="badge ok">合格</span><span>違反はありません</span>';
+  }
+
+  input.addEventListener('input', run);
+  run();
+})();
+</script>
